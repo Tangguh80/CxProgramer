@@ -124,6 +124,10 @@ body {
   .nav-buttons button:hover {
     color: #000000;
   }
+
+  .nav-buttons .active-btn {
+    color: rgb(209, 205, 205);
+  }
   
 
 /*===================== Nav 3 =================*/
@@ -165,6 +169,11 @@ body {
 
 .navbar3 .nav-buttons3 button:hover {
   color: #100cff;
+}
+
+.navbar3 .nav-buttons3 .active-btn {
+  color: #100cff;
+  border-bottom: 2px solid blue;
 }
 
 
