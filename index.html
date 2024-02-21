@@ -29,13 +29,13 @@
       <!-- Search Box -->
   <div class="search-box">
     <ion-icon name="search-outline"></ion-icon>
-    <input type="text" placeholder="Search...">
+    <input type="text" placeholder="Search program...">
   </div>
 
     <div class="nav-buttons">
-      <button class="guide-btn">Guide</button>
-      <button class="install-btn">Installation</button>
-      <button class="usage-btn">Usage</button>
+      <button class="guide-btn">Software</button>
+      <button class="install-btn">Download</button>
+      <button class="usage-btn">Api</button>
     </div>
   </div>
 
@@ -43,7 +43,7 @@
 <!--===================== Nav 3 =========================-->
 <div class="navbar3">
   <div class="logo">
-    <img src="https://i.pinimg.com/564x/87/24/94/872494b69cc22b4f955e3b8b2f84b85a.jpg" alt="Logo 3">
+    <img src="https://i.pinimg.com/564x/52/a2/a5/52a2a539d31389b5e0d5771997a4257e.jpg" alt="Logo 3">
   </div>
 
   <div class="nav-buttons3">
@@ -55,12 +55,12 @@
 
 <!--===================== judul =========================-->
 <div class="judul-container">
-  <h1>Open source icons.</h1>
-  <h2>Lovingly hand-crafted.</h2>
-  <p>Premium designed icons for use in web, iOS, Android, and desktop apps. Support for SVG. Completely open source, MIT licensed and built by Ionic.</p>
+  <h1>CX x Programmer.</h1>
+  <h2>Lovingly logic-control.</h2>
+  <p>PLCs are vital for industrial automation, controlling diverse machinery and processes. With straightforward installation and programming, they offer a versatile and cost-efficient automation solution.</p>
   <div class="judul-search-box">
     <ion-icon name="search-outline"></ion-icon>
-    <input class="judul-search-input" type="text" placeholder="Search icons...">
+    <input class="judul-search-input" type="text" placeholder="Search program...">
   </div>
 </div>
 
@@ -140,54 +140,8 @@ Artikel berukuran lebih kecil dari 1 KB, jika bertahan lebih dari beberapa bulan
 
 
 
-<script>
 
-
-document.querySelector('.navbar1').addEventListener('click', function() {
-  // Fungsi untuk melakukan scroll halus
-  function smoothScroll(target, duration) {
-    var targetPosition = target.getBoundingClientRect().top; // Posisi target relatif terhadap viewport
-    var startPosition = window.pageYOffset; // Posisi scroll saat ini
-    var startTime = null;
-
-    function animation(currentTime) {
-      if (startTime === null) startTime = currentTime;
-      var timeElapsed = currentTime - startTime;
-      var run = ease(timeElapsed, startPosition, targetPosition, duration);
-      window.scrollTo(0, run);
-      if (timeElapsed < duration) requestAnimationFrame(animation);
-    }
-
-    function ease(t, b, c, d) {
-      t /= d / 2;
-      if (t < 1) return c / 2 * t * t + b;
-      t--;
-      return -c / 2 * (t * (t - 2) - 1) + b;
-    }
-
-    requestAnimationFrame(animation);
-  }
-
-  smoothScroll(document.documentElement, 1000); // 1000 ms atau 1 detik untuk durasi scroll
-});
-
-const navbar1Height = document.querySelector('.navbar1').offsetHeight;
-const navbar2Height = document.querySelector('.navbar2').offsetHeight;
-
-window.addEventListener('scroll', function() {
-  if (window.scrollY > navbar1Height) {
-    document.querySelector('.navbar1').style.top = `-${navbar1Height}px`;
-    document.querySelector('.navbar2').style.top = `0px`;
-    document.querySelector('.navbar3').style.top = `${navbar2Height}px`;
-  } else {
-    document.querySelector('.navbar1').style.top = `0px`;
-    document.querySelector('.navbar2').style.top = `35px`;
-    document.querySelector('.navbar3').style.top = `88px`;
-  }
-});
-
-</script>
-
+<script src="index.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
