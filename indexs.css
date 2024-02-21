@@ -1,0 +1,162 @@
+/*============== Google fonts ============*/
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+/*===================== Globals =================*/
+*{
+ font-family: 'Ubuntu', sans-serif;
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+/*===================== Nav 1=================*/
+  .navbar1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 100px;
+    background-color: #000000;
+    width: 100%;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    z-index: 1000; 
+  }
+  
+ 
+  body {
+    padding-top: 60px;
+  }
+  
+
+  .logo img {
+    margin-top: 5px;
+    width: 90px; 
+    height: auto;
+  }
+  
+ 
+  .nav-text1 {
+    font-size: 14px;
+    color: #ffffff;
+  }
+  
+  
+  /*===================== Nav 2 =================*/
+  .navbar2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 100px; 
+    background-color: #ffffff;
+    width: 100%;
+    position: fixed; 
+    top: 0;
+    left: 0; 
+    margin-top: 50px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+  }
+  
+  .navbar2 .logo img {
+    width: 90px; 
+    height: auto;
+  }
+
+
+  .search-box {
+    display: flex; 
+    align-items: center; 
+    padding: 8px;
+    width: 50%;
+    background-color: #F6F7F9;
+    color: #A4ADBA;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .search-box ion-icon {
+    margin-right: 8px; 
+  }
+  
+  .search-box input[type="text"] {
+    flex-grow: 1; 
+    border: none; 
+    outline: none;
+    background-color: transparent; 
+    color: inherit; 
+  }
+  
+
+  
+.search-box input[type="text"]:focus {
+    border-color: transparent;
+  }
+
+  
+  .nav-buttons {
+    display: flex;
+  }
+  
+  .nav-buttons button {
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 5px; 
+    font-size: 14px;
+    padding: 8px 8px; 
+    background-color: transparent;
+    color: #545151;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .nav-buttons button:hover {
+    color: #000000;
+  }
+  
+
+  /*===================== Nav 3 =================*/
+
+  
+
+
+
+
+
+
+
+
+
+
+  @media (max-width: 764px) {
+    .navbar1 {
+        padding: 10px 30px;
+    }
+
+    .navbar2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 30px; 
+    }
+
+    .nav-buttons {
+      display: none; 
+    }
+  
+    .search-box {
+      width: 70%; /* Expand search box to fill available space */
+      justify-content: center; /* Center the search icon and input field within the search box */
+    }
+  
+    .search-box input[type="text"] {
+      width: 70%; /* Optionally adjust the width of the input field within the search box for better aesthetics */
+    }
+  }
+  
