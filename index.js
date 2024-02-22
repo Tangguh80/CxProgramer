@@ -95,14 +95,40 @@ window.addEventListener('scroll', function() {
     // Jadikan navbar3 fixed dan atur posisinya di bawah navbar2
     document.querySelector('.navbar3').style.position = 'fixed';
     document.querySelector('.navbar3').style.top = '50px'; // Atur top sesuai kebutuhan, misal di bawah navbar2
-    document.querySelector('.judul-search-box').style.marginBottom = '150px'; // Ubah margin-bottom menjadi 200px
+    document.querySelector('.judul-search-box').style.marginBottom = '200px'; // Ubah margin-bottom menjadi 200px
   } else {
     // Kembalikan navbar3 ke posisi relative dan atur top sesuai dengan layout asli
     document.querySelector('.navbar3').style.position = 'relative';
     document.querySelector('.navbar3').style.top = '600px'; // Sesuaikan ini sesuai dengan kebutuhan layout Anda
-    document.querySelector('.judul-search-box').style.marginBottom = '100px'; // Kembalikan margin-bottom ke nilai semula
+    document.querySelector('.judul-search-box').style.marginBottom = '150px'; // Kembalikan margin-bottom ke nilai semula
   }
 });
+
+
+
+
+window.addEventListener('scroll', function() {
+  // Cek ukuran viewport apakah maksimal 414px
+  if (window.matchMedia("(max-width: 414px)").matches) {
+    // Logika untuk viewport maksimal 414px
+    if (window.scrollY >= 550) {
+      // Jadikan navbar3 fixed dan atur posisinya di bawah navbar2
+      document.querySelector('.navbar3').style.position = 'fixed';
+      document.querySelector('.navbar3').style.top = '50px'; // Atur top sesuai kebutuhan
+      // Ubah margin-bottom menjadi 200px, disesuaikan karena navbar3 sekarang fixed
+      document.querySelector('.judul-search-box').style.marginBottom = '100px';
+    } else {
+      // Kembalikan navbar3 ke posisi relative dan atur top kembali
+      document.querySelector('.navbar3').style.position = 'relative';
+      document.querySelector('.navbar3').style.top = '600px'; // Sesuaikan ini sesuai layout
+      // Kembalikan margin-bottom ke nilai semula
+      document.querySelector('.judul-search-box').style.marginBottom = '45px';
+    }
+  } else {
+
+  }
+});
+
 
 
 
