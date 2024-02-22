@@ -221,10 +221,11 @@ h2 {
 .judul-search-box {
   display: flex;
   align-items: center;
-  justify-content: center; /* Untuk menyatukan elemen di tengah horizontal */
+  justify-content: center; 
   padding: 8px;
   width: 100%;
-  margin: 10px auto; 
+  margin-top: 30px;
+  margin-bottom: 150px;
   height: 60px;
   background-color: #ffffff;
   color: #A4ADBA;
@@ -256,11 +257,70 @@ h2 {
 
 
 
+/*===================== body isi =================*/
+.body-isi {
+  width: 100%;
+  background-color: rgb(255, 255, 255); 
+  color: rgb(0, 0, 0); 
+  padding-right: 50px; 
+  padding-left: 50px;
+  padding-bottom: 30px;
+}
 
 
+/*===================== Table isi =================*/
+table {
+  width: 90%; 
+  margin-left: auto; /* Margin kiri otomatis */
+  margin-right: auto;
+  border-collapse: collapse; 
+  table-layout: fixed; 
+}
+
+img.responsive {
+  max-width: 100%; 
+  margin: auto;
+  height: auto; 
+  display: block; 
+}
+
+th, td {
+  border: 1px solid #0a11f0; 
+  text-align: center;
+  font-size: 14px;
+  padding: 8px; 
+}
+
+th {
+  background-color: #A4ADBA; 
+  color: #000000; 
+}
+
+tr:nth-child(even) {
+  background-color: #ffffff; 
+}
+
+tr:hover {
+  background-color: #eaeaea; 
+}
+
+img {
+  width: 100px; 
+  height: auto; 
+}
 
 
+th:nth-child(1), td:nth-child(1) { 
+  width: 25%;
+}
 
+th:nth-child(2), td:nth-child(2) { 
+  width: 25%;
+}
+
+th:nth-child(3), td:nth-child(3) { 
+  width: 50%; 
+}
 
 
 
@@ -339,5 +399,15 @@ h2 {
       font-size: 30px;
       color: #677483;
     }
+
+    .body-isi {
+      padding-right: 30px; 
+      padding-left: 30px;
+    }
+
+    table {
+      width: 100%; 
+    }
+    
   }
   
