@@ -1,3 +1,93 @@
+//===================== script pencarian kata ========================= //
+
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInputs = document.querySelectorAll('.search-box input, .judul-search-box input');
+
+  // Atur ulang nilai input menjadi kosong saat halaman dimuat
+  searchInputs.forEach(function(input) {
+    input.value = '';
+  });
+  
+  // Fungsi untuk membersihkan highlight
+  function removeHighlights() {
+    document.querySelectorAll('.highlight').forEach(function(el) {
+      const parent = el.parentNode;
+      parent.replaceChild(document.createTextNode(el.textContent), el);
+      parent.normalize(); // Menggabungkan kembali node teks yang terpisah
+    });
+  }
+
+  // Fungsi untuk mencari dan highlight teks
+  function highlightText(node, text) {
+    if (!text.trim()) return;
+
+    const regex = new RegExp(`(${text})`, 'gi');
+    const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, null, false);
+    let n;
+
+    while (n = walker.nextNode()) {
+      if (n.nodeType === 3 && n.textContent.match(regex)) {
+        const frag = document.createDocumentFragment();
+        let lastIdx = 0;
+        n.textContent.replace(regex, (match, p1, offset) => {
+          const before = document.createTextNode(n.textContent.slice(lastIdx, offset));
+          const highlighted = document.createElement('span');
+          highlighted.className = 'highlight';
+          highlighted.textContent = match;
+          frag.appendChild(before);
+          frag.appendChild(highlighted);
+          lastIdx = offset + match.length;
+        });
+        const after = document.createTextNode(n.textContent.slice(lastIdx));
+        frag.appendChild(after);
+
+        n.parentNode.replaceChild(frag, n);
+      }
+    }
+  }
+
+  // Fungsi untuk melakukan scroll ke highlight pertama
+  function scrollToFirstHighlight() {
+    const firstHighlight = document.querySelector('.highlight');
+    if (firstHighlight) {
+      firstHighlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  // Sinkronisasi nilai antar input dan lakukan pencarian serta highlight
+  searchInputs.forEach(function(input) {
+    input.addEventListener('input', function() {
+      const value = this.value;
+      searchInputs.forEach(function(otherInput) {
+        if (otherInput !== input) {
+          otherInput.value = value;
+        }
+      });
+
+      removeHighlights();
+      highlightText(document.body, value);
+      scrollToFirstHighlight();
+    });
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //===================== scrroling penggabungan dan pemisahan nav3 ========================= //
 window.addEventListener('scroll', function() {
   // Periksa jika posisi scroll lebih dari atau sama dengan 550px
@@ -5,12 +95,12 @@ window.addEventListener('scroll', function() {
     // Jadikan navbar3 fixed dan atur posisinya di bawah navbar2
     document.querySelector('.navbar3').style.position = 'fixed';
     document.querySelector('.navbar3').style.top = '50px'; // Atur top sesuai kebutuhan, misal di bawah navbar2
-    document.querySelector('.judul-search-box').style.marginBottom = '200px'; // Ubah margin-bottom menjadi 200px
+    document.querySelector('.judul-search-box').style.marginBottom = '150px'; // Ubah margin-bottom menjadi 200px
   } else {
     // Kembalikan navbar3 ke posisi relative dan atur top sesuai dengan layout asli
     document.querySelector('.navbar3').style.position = 'relative';
     document.querySelector('.navbar3').style.top = '600px'; // Sesuaikan ini sesuai dengan kebutuhan layout Anda
-    document.querySelector('.judul-search-box').style.marginBottom = '150px'; // Kembalikan margin-bottom ke nilai semula
+    document.querySelector('.judul-search-box').style.marginBottom = '100px'; // Kembalikan margin-bottom ke nilai semula
   }
 });
 
