@@ -138,12 +138,15 @@ body {
   padding: 10px 100px;
   background-color: #ffffff;
   width: 100%;
-  position: relative; /* Ubah menjadi relative */
-  top: 600px; /* Set top ke 0 untuk posisi relative */
+  position: relative; 
+  top: 600px; 
   left: 0;
   z-index: 2;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  
 }
+
+
 
 
 .navbar3 .logo img {
