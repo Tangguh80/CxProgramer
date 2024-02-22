@@ -1,17 +1,18 @@
 //===================== scrroling penggabungan dan pemisahan nav3 ========================= //
 window.addEventListener('scroll', function() {
-    // Periksa jika posisi scroll lebih dari atau sama dengan 480px
-    if (window.scrollY >= 550) {
-      // Jadikan navbar3 fixed dan atur posisinya di bawah navbar2
-      document.querySelector('.navbar3').style.position = 'fixed';
-      document.querySelector('.navbar3').style.top = '50px'; // Atur top sesuai kebutuhan, misal di bawah navbar2
-    } else {
-      // Kembalikan navbar3 ke posisi relative dan atur top sesuai dengan layout asli
-      document.querySelector('.navbar3').style.position = 'relative';
-      document.querySelector('.navbar3').style.top = '600px'; // Sesuaikan ini sesuai dengan kebutuhan layout Anda
-    }
-  });
-
+  // Periksa jika posisi scroll lebih dari atau sama dengan 550px
+  if (window.scrollY >= 550) {
+    // Jadikan navbar3 fixed dan atur posisinya di bawah navbar2
+    document.querySelector('.navbar3').style.position = 'fixed';
+    document.querySelector('.navbar3').style.top = '50px'; // Atur top sesuai kebutuhan, misal di bawah navbar2
+    document.querySelector('.judul-search-box').style.marginBottom = '200px'; // Ubah margin-bottom menjadi 200px
+  } else {
+    // Kembalikan navbar3 ke posisi relative dan atur top sesuai dengan layout asli
+    document.querySelector('.navbar3').style.position = 'relative';
+    document.querySelector('.navbar3').style.top = '600px'; // Sesuaikan ini sesuai dengan kebutuhan layout Anda
+    document.querySelector('.judul-search-box').style.marginBottom = '150px'; // Kembalikan margin-bottom ke nilai semula
+  }
+});
 
 
 
