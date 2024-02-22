@@ -13,6 +13,11 @@ body {
     margin: 0;
     padding: 0;
   }
+
+  .highlight {
+    background-color: yellow;
+    border-radius: 5px;
+  }
   
 /*===================== Nav 1=================*/
   .navbar1 {
@@ -270,6 +275,14 @@ h2 {
   padding-bottom: 30px;
 }
 
+.body-isi h2 {
+  margin-left: 60px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  border-left: 2px solid black;
+  padding-left: 10px;
+}
+
 
 /*===================== Table isi =================*/
 table {
@@ -278,6 +291,7 @@ table {
   margin-right: auto;
   border-collapse: collapse; 
   table-layout: fixed; 
+  margin-bottom: 20px;
 }
 
 img.responsive {
@@ -288,7 +302,7 @@ img.responsive {
 }
 
 th, td {
-  border: 1px solid #0a11f0; 
+  border: 1px solid #006aff; 
   text-align: center;
   font-size: 14px;
   padding: 8px; 
@@ -410,6 +424,14 @@ th:nth-child(3), td:nth-child(3) {
 
     table {
       width: 100%; 
+    }
+
+    .body-isi h2 {
+      margin-left: 0px;
+      margin-bottom: 20px;
+      font-size: 20px;
+      border-left: 2px solid black;
+      padding-left: 10px;
     }
     
   }
