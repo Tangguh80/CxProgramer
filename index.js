@@ -109,7 +109,7 @@ window.addEventListener('scroll', function() {
 
 window.addEventListener('scroll', function() {
   // Cek ukuran viewport apakah maksimal 414px
-  if (window.matchMedia("(max-width: 414px)").matches) {
+  if (window.matchMedia("(max-width: 375px)").matches) {
     // Logika untuk viewport maksimal 414px
     if (window.scrollY >= 550) {
       // Jadikan navbar3 fixed dan atur posisinya di bawah navbar2
