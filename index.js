@@ -1,4 +1,48 @@
-//===================== script pencarian kata ========================= //
+document.addEventListener("DOMContentLoaded", function() {
+  const buttons = document.querySelectorAll(".nav-buttons3 button");
+  const contents = {
+    "guide-btn": document.querySelector(".Guide-isi"),
+    "install-btn": document.querySelector(".Installation-isi"),
+    "usage-btn": document.querySelector(".Usage-isi"),
+  };
+
+  // Menetapkan tombol Guide sebagai aktif dan menampilkan kontennya saat halaman pertama kali dimuat
+  contents["guide-btn"].style.display = "block"; // Tampilkan konten Guide
+  document.querySelector(".guide-btn").classList.add("active-btn"); // Tambahkan kelas active-btn ke tombol Guide
+
+  buttons.forEach(button => {
+    button.addEventListener("click", function() {
+      // Menghapus kelas active-btn dari semua tombol
+      buttons.forEach(btn => btn.classList.remove("active-btn"));
+      // Menambahkan kelas active-btn ke tombol yang diklik
+      this.classList.add("active-btn");
+
+      // Menyembunyikan semua div konten
+      Object.values(contents).forEach(content => content.style.display = "none");
+
+      // Menampilkan div konten yang sesuai dengan tombol yang diklik
+      contents[this.className.split(" ")[0]].style.display = "block";
+    });
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//===================== pencarian dan higlight ========================= //
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
   const searchInputs = document.querySelectorAll('.search-box input, .judul-search-box input');
@@ -128,11 +172,6 @@ window.addEventListener('scroll', function() {
 
   }
 });
-
-
-
-
-
 
 
 
