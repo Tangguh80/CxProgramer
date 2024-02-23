@@ -1,6 +1,7 @@
 /*============== Google fonts ============*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
+
 /*===================== Globals =================*/
 *{
  font-family: 'Ubuntu', sans-serif;
@@ -265,8 +266,14 @@ h2 {
 
 
 
-/*===================== body isi =================*/
-.body-isi {
+
+
+.Guide-isi, .Installation-isi, .Usage-isi {
+  display: none; /* Hide content by default */
+}
+
+/*===================== Guide isi =================*/
+.Guide-isi {
   width: 100%;
   background-color: rgb(255, 255, 255); 
   color: rgb(0, 0, 0); 
@@ -275,7 +282,7 @@ h2 {
   padding-bottom: 30px;
 }
 
-.body-isi h2 {
+.Guide-isi h2 {
   margin-left: 60px;
   margin-bottom: 20px;
   font-size: 20px;
@@ -287,9 +294,12 @@ h2 {
 /*===================== Table isi =================*/
 table {
   width: 90%; 
+  border: 1.4px solid #C3CBD8;
   margin-left: auto; /* Margin kiri otomatis */
   margin-right: auto;
-  border-collapse: collapse; 
+  border-radius: 10px; /* Menambahkan lengkungan pada sudut-sudut tabel */
+  border-collapse: separate;
+  border-spacing: 0;
   table-layout: fixed; 
   margin-bottom: 20px;
 }
@@ -302,14 +312,14 @@ img.responsive {
 }
 
 th, td {
-  border: 1px solid #006aff; 
+  border: 1px solid #C3CBD8; 
   text-align: center;
   font-size: 14px;
   padding: 8px; 
 }
 
 th {
-  background-color: #A4ADBA; 
+  background-color: #C3CBD8; 
   color: #000000; 
 }
 
@@ -319,6 +329,36 @@ tr:nth-child(even) {
 
 tr:hover {
   background-color: #eaeaea; 
+}
+
+
+tr td:first-child, tr th:first-child {
+  border-left: none;
+}
+
+/* Mengatur ulang untuk sel terakhir di setiap baris */
+tr td:last-child, tr th:last-child {
+  border-right: none;
+}
+
+/* Mengatur ulang untuk sel pertama di baris pertama */
+tr:first-child th:first-child {
+  border-top-left-radius: 8px;
+}
+
+/* Mengatur ulang untuk sel terakhir di baris pertama */
+tr:first-child th:last-child {
+  border-top-right-radius: 8px;
+}
+
+/* Mengatur ulang untuk sel pertama di baris terakhir */
+tr:last-child td:first-child {
+  border-bottom-left-radius: 9px;
+}
+
+/* Mengatur ulang untuk sel terakhir di baris terakhir */
+tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
 }
 
 img {
@@ -339,6 +379,35 @@ th:nth-child(3), td:nth-child(3) {
   width: 50%; 
 }
 
+#table2 th:nth-child(1), #table2 td:nth-child(1) { 
+  width: 25%;
+}
+
+#table2 th:nth-child(2), #table2 td:nth-child(2) { 
+  width: 75%;
+}
+
+
+
+
+
+/*===================== Usage isi =================*/
+.usage-isi {
+  width: 100%;
+  background-color: rgb(255, 255, 255); 
+  color: rgb(0, 0, 0); 
+  padding-right: 50px; 
+  padding-left: 50px;
+  padding-bottom: 30px;
+}
+
+.Usage-isi h2 {
+  margin-left: 60px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  border-left: 2px solid black;
+  padding-left: 10px;
+}
 
 
 
@@ -400,6 +469,7 @@ th:nth-child(3), td:nth-child(3) {
     .judul-search-box {
       width: 100%; /* Expand search box to fill available space */
       justify-content: center; /* Center the search icon and input field within the search box */
+        margin-bottom: 50px;
     }
 
     h1 {
@@ -417,7 +487,7 @@ th:nth-child(3), td:nth-child(3) {
       color: #677483;
     }
 
-    .body-isi {
+    .Guide-isi {
       padding-right: 30px; 
       padding-left: 30px;
     }
@@ -426,7 +496,21 @@ th:nth-child(3), td:nth-child(3) {
       width: 100%; 
     }
 
-    .body-isi h2 {
+    .Guide-isi h2 {
+      margin-left: 0px;
+      margin-bottom: 20px;
+      font-size: 20px;
+      border-left: 2px solid black;
+      padding-left: 10px;
+    }
+
+    .Usage-isi {
+      padding-right: 30px; 
+      padding-left: 30px;
+    }
+
+
+    .Usage-isi h2 {
       margin-left: 0px;
       margin-bottom: 20px;
       font-size: 20px;
