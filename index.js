@@ -1,3 +1,45 @@
+//===================== fungsi tombol selengkapnya menampilkan conten ========================= //
+document.querySelectorAll('.selengkapnya').forEach(function(selengkapnyaBtn) {
+  selengkapnyaBtn.addEventListener('click', function() {
+    var parent = this.closest('.tabs-isi-utama');
+    var img = parent.querySelector('.img-tabs');
+    var unduhBtn = parent.querySelector('.unduh');
+    var cobaBtn = parent.querySelector('.coba');
+    var icon = this.querySelector('.chevron-icon');
+
+    [img, unduhBtn, cobaBtn].forEach(function(element) {
+      element.style.display = element.style.display === 'none' ? 'block' : 'none';
+    });
+
+    var isHidden = img.style.display === 'none';
+    this.innerHTML = isHidden ? 'Selengkapnya <ion-icon name="chevron-down-sharp" class="chevron-icon"></ion-icon>' : 'Sembunyikan <ion-icon name="chevron-down-sharp" class="chevron-icon"></ion-icon>';
+    icon = this.querySelector('.chevron-icon'); // Re-select the icon as it's re-added to the button
+
+    // Determine the rotation direction and apply the corresponding animation class
+    if (isHidden) {
+      icon.classList.remove('chevron-rotate-ccw');
+      icon.classList.add('chevron-rotate-cw');
+    } else {
+      icon.classList.remove('chevron-rotate-cw');
+      icon.classList.add('chevron-rotate-ccw');
+    }
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//===================== menampilkan konten navbar3 ========================= //
 document.addEventListener("DOMContentLoaded", function() {
   const buttons = document.querySelectorAll(".nav-buttons3 button");
   const contents = {
@@ -6,22 +48,28 @@ document.addEventListener("DOMContentLoaded", function() {
     "usage-btn": document.querySelector(".Usage-isi"),
   };
 
-  // Menetapkan tombol Guide sebagai aktif dan menampilkan kontennya saat halaman pertama kali dimuat
-  contents["guide-btn"].style.display = "block"; // Tampilkan konten Guide
-  document.querySelector(".guide-btn").classList.add("active-btn"); // Tambahkan kelas active-btn ke tombol Guide
+  function setActiveButton(buttonId) {
+    // Remove active-btn class from all buttons
+    buttons.forEach(btn => btn.classList.remove("active-btn"));
+    // Hide all content divs
+    Object.values(contents).forEach(content => content.style.display = "none");
+
+    // Add active-btn class to the specified button by id and show its content
+    document.getElementById(buttonId).classList.add("active-btn");
+    contents[buttonId].style.display = "block";
+  }
+
+  // Retrieve the last active button from localStorage, defaulting to "guide-btn" if none is found
+  const lastActiveButton = localStorage.getItem('lastActiveButton') || "guide-btn";
+  setActiveButton(lastActiveButton);
 
   buttons.forEach(button => {
     button.addEventListener("click", function() {
-      // Menghapus kelas active-btn dari semua tombol
-      buttons.forEach(btn => btn.classList.remove("active-btn"));
-      // Menambahkan kelas active-btn ke tombol yang diklik
-      this.classList.add("active-btn");
-
-      // Menyembunyikan semua div konten
-      Object.values(contents).forEach(content => content.style.display = "none");
-
-      // Menampilkan div konten yang sesuai dengan tombol yang diklik
-      contents[this.className.split(" ")[0]].style.display = "block";
+      const buttonId = this.id;
+      // Set the clicked button as active and display its content
+      setActiveButton(buttonId);
+      // Store the last active button in localStorage
+      localStorage.setItem('lastActiveButton', buttonId);
     });
   });
 });
@@ -40,10 +88,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+
+
 //===================== pencarian dan higlight ========================= //
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
   const searchInputs = document.querySelectorAll('.search-box input, .judul-search-box input');
 
@@ -114,6 +161,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+
 
 
 
