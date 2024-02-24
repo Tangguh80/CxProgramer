@@ -285,7 +285,7 @@ h2 {
 .Guide-isi h2 {
   margin-left: 60px;
   margin-bottom: 20px;
-  font-size: 20px;
+  font-size: 15px;
   border-left: 2px solid black;
   padding-left: 10px;
 }
@@ -319,8 +319,8 @@ th, td {
 }
 
 th {
-  background-color: #C3CBD8; 
-  color: #000000; 
+  background-color: #8798ec; 
+  color: #ffffff; 
 }
 
 tr:nth-child(even) {
@@ -392,9 +392,9 @@ th:nth-child(3), td:nth-child(3) {
 
 
 /*===================== Usage isi =================*/
-.usage-isi {
+.Usage-isi {
   width: 100%;
-  background-color: rgb(255, 255, 255); 
+  background-color: transparent; 
   color: rgb(0, 0, 0); 
   padding-right: 50px; 
   padding-left: 50px;
@@ -404,10 +404,126 @@ th:nth-child(3), td:nth-child(3) {
 .Usage-isi h2 {
   margin-left: 60px;
   margin-bottom: 20px;
-  font-size: 20px;
+  font-size: 15px;
   border-left: 2px solid black;
   padding-left: 10px;
 }
+
+
+
+
+
+
+
+.tabs-isi-utama {
+  position: relative;
+  width: 90%; 
+  border: 1.5px solid #0731ff;
+  border-radius: 15px;
+  margin: 0px auto; 
+  background-color: transparent; 
+  padding: 0px; 
+  box-sizing: border-box; 
+  margin-bottom: 20px;
+}
+
+.tabs-isi {
+  
+  background-color: #8798ec;
+  border: none; 
+  padding: 10px;
+  border-radius: 14px;
+  margin: 0 auto;
+  color: white; 
+}
+
+.judul {
+  background-color: blue; 
+  padding: 10px; 
+  color: white; 
+  font-weight: bold; 
+  position: absolute; 
+  top: 0px; 
+  left: 0px; 
+  border-top-left-radius: 13px; 
+  border-bottom-right-radius: 25px; 
+  border-top-right-radius: 0; 
+  border-bottom-left-radius: 0;
+}
+
+.keterangan-tabs{
+  margin-top: 40px;
+  margin-bottom: 40px;
+  color: white;
+}
+
+
+
+.tombol {
+  display: flex;
+  flex-wrap: nowrap; 
+  justify-content: flex-start; 
+  align-items: flex-end; 
+  padding: 10px;
+  overflow-x: auto; 
+  overflow-y: hidden; 
+}
+
+.tombol button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #0731ff;
+  color: white;
+  padding: 8px 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 10px; 
+}
+
+.tombol .selengkapnya {
+  margin-left: auto; 
+  margin-right: 0; 
+}
+
+.tombol button:hover {
+  background-color: #051a7a;
+}
+
+.tombol ion-icon {
+  margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -499,7 +615,7 @@ th:nth-child(3), td:nth-child(3) {
     .Guide-isi h2 {
       margin-left: 0px;
       margin-bottom: 20px;
-      font-size: 20px;
+      font-size: 15px;
       border-left: 2px solid black;
       padding-left: 10px;
     }
@@ -516,6 +632,10 @@ th:nth-child(3), td:nth-child(3) {
       font-size: 20px;
       border-left: 2px solid black;
       padding-left: 10px;
+    }
+
+    .tabs-isi-utama {
+      width: 100%; 
     }
     
   }
