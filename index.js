@@ -1,3 +1,30 @@
+// Menemukan semua elemen dengan kelas .coba
+var cobaButtons = document.querySelectorAll('.coba');
+
+// Menambahkan event listener untuk setiap tombol "Coba"
+cobaButtons.forEach(function(button) {
+  button.addEventListener('click', function() {
+    document.getElementById('overlay').style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Nonaktifkan scroll
+  });
+});
+
+document.getElementById('belum').addEventListener('click', function() {
+  document.getElementById('overlay').style.display = 'none';
+  document.body.style.overflow = 'auto'; // Aktifkan kembali scroll
+});
+
+document.getElementById('sudah').addEventListener('click', function() {
+  document.getElementById('overlay').style.display = 'none';
+  document.body.style.overflow = 'auto'; // Aktifkan kembali scroll
+});
+
+
+
+
+
+
+
 //===================== fungsi tombol selengkapnya menampilkan conten ========================= //
 document.querySelectorAll('.selengkapnya').forEach(function(selengkapnyaBtn) {
   selengkapnyaBtn.addEventListener('click', function() {
@@ -98,8 +125,13 @@ document.addEventListener('DOMContentLoaded', function() {
   searchInputs.forEach(function(input) {
     input.value = '';
   });
-  
-  // Fungsi untuk membersihkan highlight
+
+  function synchronizeInputValues(sourceValue) {
+    searchInputs.forEach(function(input) {
+      input.value = sourceValue;
+    });
+  }
+
   function removeHighlights() {
     document.querySelectorAll('.highlight').forEach(function(el) {
       const parent = el.parentNode;
@@ -108,7 +140,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Fungsi untuk mencari dan highlight teks
   function highlightText(node, text) {
     if (!text.trim()) return;
 
@@ -137,7 +168,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Fungsi untuk melakukan scroll ke highlight pertama
   function scrollToFirstHighlight() {
     const firstHighlight = document.querySelector('.highlight');
     if (firstHighlight) {
@@ -145,15 +175,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Sinkronisasi nilai antar input dan lakukan pencarian serta highlight
   searchInputs.forEach(function(input) {
     input.addEventListener('input', function() {
       const value = this.value;
-      searchInputs.forEach(function(otherInput) {
-        if (otherInput !== input) {
-          otherInput.value = value;
-        }
-      });
+      synchronizeInputValues(value); // Pastikan nilai input selalu sinkron
 
       removeHighlights();
       highlightText(document.body, value);
@@ -181,13 +206,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
 //===================== scrroling penggabungan dan pemisahan nav3 ========================= //
 window.addEventListener('scroll', function() {
   // Periksa jika posisi scroll lebih dari atau sama dengan 550px
   if (window.scrollY >= 550) {
     // Jadikan navbar3 fixed dan atur posisinya di bawah navbar2
     document.querySelector('.navbar3').style.position = 'fixed';
-    document.querySelector('.navbar3').style.top = '50px'; // Atur top sesuai kebutuhan, misal di bawah navbar2
+    document.querySelector('.navbar3').style.top = '53px'; // Atur top sesuai kebutuhan, misal di bawah navbar2
     document.querySelector('.judul-search-box').style.marginBottom = '200px'; // Ubah margin-bottom menjadi 200px
   } else {
     // Kembalikan navbar3 ke posisi relative dan atur top sesuai dengan layout asli
