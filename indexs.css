@@ -425,6 +425,96 @@ th:nth-child(3), td:nth-child(3) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*===================== Instalattion isi =================*/
+.Installation-isi {
+  width: 100%;
+  background-color: transparent; 
+  color: rgb(0, 0, 0); 
+  padding-right: 50px; 
+  padding-left: 50px;
+  padding-bottom: 30px;
+}
+
+.Installation-isi h2 {
+  margin-left: 60px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  border-left: 2px solid black;
+  padding-left: 10px;
+}
+
+
+
+#table3 th:nth-child(1), #table3 td:nth-child(1) { 
+  width: 20%; 
+}
+
+
+#table3 th:nth-child(2), #table3 td:nth-child(2) { 
+  width: 20%; 
+}
+
+
+#table3 th:nth-child(3), #table3 td:nth-child(3) { 
+  width: 20%; 
+}
+
+
+#table3 th:nth-child(4), #table3 td:nth-child(4) { 
+  width: 35%; 
+}
+
+
+
+
+
+.key {
+  display: inline-block;
+  border: 1px solid #000; 
+  border-radius: 4px; 
+  padding: 2px 8px; 
+  background-color: #e4e4e4; 
+  margin: 2px; 
+  font-family: 'Courier New', monospace; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*===================== Usage isi =================*/
 .Usage-isi {
   width: 100%;
@@ -572,6 +662,52 @@ img.img-tabs {
   animation: rotateCounterclockwise 0.5s forwards; /* Adjust the duration as needed */
 }
 
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.744);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.overlay-content {
+  background: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 15px;
+  max-width: 500px;
+  width: 90%;
+}
+
+.btn-overlay {
+  margin: 10px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-overlay#belum {
+  background-color: #dc3545; /* Warna merah */
+}
+
+.btn-overlay#belum:hover {
+  background-color: #881c27; /* Warna merah yang lebih gelap saat dihover */
+}
+
+.btn-overlay:hover {
+  background-color: #0056b3;
+}
+
+
 
 
 
@@ -704,13 +840,27 @@ img.img-tabs {
     .Usage-isi h2 {
       margin-left: 0px;
       margin-bottom: 20px;
-      font-size: 20px;
+      font-size: 15px;
       border-left: 2px solid black;
       padding-left: 10px;
     }
 
     .tabs-isi-utama {
       width: 100%; 
+    }
+
+    .Installation-isi {
+      padding-right: 30px; 
+      padding-left: 30px;
+    }
+
+
+    .Installation-isi h2 {
+      margin-left: 0px;
+      margin-bottom: 20px;
+      font-size: 15px;
+      border-left: 2px solid black;
+      padding-left: 10px;
     }
     
   }
