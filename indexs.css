@@ -496,7 +496,41 @@ th:nth-child(3), td:nth-child(3) {
 
 
 
+/*===================== cara pasang =================*/
 
+ol {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: none;
+  max-width: 700px;
+  margin: 30px auto;
+  list-style-type: none; /* hapus nomor default */
+  counter-reset: item; /* reset counter */
+}
+ol li {
+  margin: 20px 0;
+  font-size: 18px;
+  color: #343a40;
+  position: relative;
+  padding-left: 25px;
+}
+ol li:before {
+  content: counter(item) ". ";
+  counter-increment: item;
+  position: absolute;
+  left: 0;
+  color: #007bff;
+  font-weight: bold;
+}
+a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+a:hover {
+  text-decoration: underline;
+}
 
 
 
