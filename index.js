@@ -34,12 +34,24 @@ document.querySelectorAll('.selengkapnya').forEach(function(selengkapnyaBtn) {
     var cobaBtn = parent.querySelector('.coba');
     var icon = this.querySelector('.chevron-icon');
 
-    [img, unduhBtn, cobaBtn].forEach(function(element) {
-      element.style.display = element.style.display === 'none' ? 'block' : 'none';
-    });
-
+    // Determine if the content is currently hidden or shown
     var isHidden = img.style.display === 'none';
-    this.innerHTML = isHidden ? 'Selengkapnya <ion-icon name="chevron-down-sharp" class="chevron-icon"></ion-icon>' : 'Sembunyikan <ion-icon name="chevron-down-sharp" class="chevron-icon"></ion-icon>';
+
+    if (isHidden) {
+      [img, unduhBtn, cobaBtn].forEach(function(element) {
+        element.style.display = 'block';
+        element.classList.add('slide-down');
+        element.classList.remove('slide-up');
+      });
+    } else {
+      [img, unduhBtn, cobaBtn].forEach(function(element) {
+        element.classList.add('slide-up');
+        element.classList.remove('slide-down');
+        setTimeout(() => { element.style.display = 'none'; }, 500); // Hide elements after animation
+      });
+    }
+
+    this.innerHTML = isHidden ? 'Sembunyikan <ion-icon name="chevron-down-sharp" class="chevron-icon"></ion-icon>' : 'Selengkapnya <ion-icon name="chevron-down-sharp" class="chevron-icon"></ion-icon>';
     icon = this.querySelector('.chevron-icon'); // Re-select the icon as it's re-added to the button
 
     // Determine the rotation direction and apply the corresponding animation class
@@ -52,6 +64,12 @@ document.querySelectorAll('.selengkapnya').forEach(function(selengkapnyaBtn) {
     }
   });
 });
+
+// Set initial height to auto for all containers
+document.querySelectorAll('.tabs-isi-utama').forEach(function(container) {
+  container.style.height = 'auto';
+});
+
 
 
 
