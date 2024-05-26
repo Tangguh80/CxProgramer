@@ -391,12 +391,36 @@
 
 <!--===================== usage isi =========================-->
 
-<!-- Overlay Container -->
 <div id="overlay" style="display:none;">
   <div class="overlay-content">
-    <p>Apakah Anda yakin untuk mencoba Diagram ini? Pastikan software CX-Programmer sudah terinstal, dan device ini bukan perangkat mobile atau tablet, karena hanya support untuk perangkat PC.</p>
-    <button id="belum" class="btn-overlay">Belum</button>
-    <button id="sudah" class="btn-overlay">Sudah</button>
+      <div class="info-content">
+          <p>Apakah Anda yakin untuk mencoba Diagram ini? Pastikan software CX-Programmer sudah terinstal, dan device ini bukan perangkat mobile atau tablet, karena hanya support untuk perangkat PC.</p>
+      </div>
+      
+      <div class="loading">
+          <div class="loader"></div>
+          <div class="loader2"></div>
+      </div>
+
+      <div class="info-device">
+          <div class="text-info">
+              <div class="loader3"></div><p>Device Info</p>
+              <table>
+                  <tr>
+                      <td>Perangkat</td>
+                      <td id="device-type">Laptop</td>
+                  </tr>
+                  <tr>
+                      <td>CX-One</td>
+                      <td id="cx-status">Terpasang</td>
+                  </tr>
+              </table>
+              <button id="pergi" class="btn-overlay" style="display:none;">Pergi</button>
+          </div>
+      </div>
+      
+      <button id="belum" class="btn-overlay">Batal</button>
+      <button id="sudah" class="btn-overlay">Mulai</button>
   </div>
 </div>
 
