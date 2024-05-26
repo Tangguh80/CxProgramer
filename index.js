@@ -72,7 +72,7 @@ function hideOverlay() {
                     // Check if CX-P.exe is installed
                     // Simulate checking the installation (replace with actual check logic)
                     if (isCxInstalled()) {
-                        cxStatus = 'Terpasang';
+                        cxStatus = 'Tidak Terpasang';
                     }
 
                     document.getElementById('device-type').innerText = deviceType;
