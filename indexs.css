@@ -703,6 +703,7 @@ img.img-tabs {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  animation: fadeIn 0.3s forwards ease-in-out;
 }
 
 .overlay-content {
@@ -712,6 +713,7 @@ img.img-tabs {
   border-radius: 15px;
   max-width: 500px;
   width: 90%;
+  animation: growFromCenter 0.3s forwards ease-in-out;
 }
 
 .btn-overlay {
@@ -726,16 +728,195 @@ img.img-tabs {
 }
 
 .btn-overlay#belum {
-  background-color: #dc3545; /* Warna merah */
+  background-color: #ff0000; /* Warna merah */
 }
 
 .btn-overlay#belum:hover {
-  background-color: #881c27; /* Warna merah yang lebih gelap saat dihover */
+  background-color: #660a0a; /* Warna merah yang lebih gelap saat dihover */
 }
 
 .btn-overlay:hover {
   background-color: #0056b3;
 }
+
+@keyframes growFromCenter {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shrinkToCenter {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s forwards ease-in-out;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s forwards ease-in-out;
+}
+
+.grow-from-center {
+  animation: growFromCenter 0.5s forwards ease-in-out;
+}
+
+.shrink-to-center {
+  animation: shrinkToCenter 0.5s forwards ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.info-content{
+  display: flex;
+}
+
+
+.loading {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 150px; 
+}
+
+.info-device {
+  position: relative;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+
+.text-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.text-info table {
+  margin-top: 10px;
+  border-collapse: collapse;
+}
+
+.text-info table, .text-info th, .text-info td {
+  border: 1px solid #677483;
+}
+
+.text-info th, .text-info td {
+  padding: 8px;
+  text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*===================== Loader 1=================*/
+
+
+.loader {
+  width: 32px; 
+  height: 58px;
+  position: relative;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #e6ff01;    
+  box-shadow: 0 0 0 50px;
+  clip-path: polygon(100% 0, 23% 46%, 46% 44%, 15% 69%, 38% 67%, 0 100%, 76% 57%, 53% 58%, 88% 33%, 60% 37%);;
+}
+.loader:after {
+  animation: l8 1s infinite;
+  transform: perspective(300px) translateZ(0px)
+}
+@keyframes l8 {
+  to {transform:perspective(300px) translateZ(180px);opacity:0}
+}
+
+
+.loader2 {
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 20px;
+  animation: l1 1s linear infinite alternate;
+}
+.loader2:before {
+  content:"Loading..."
+}
+
+@keyframes l1 {to{opacity: 0}}
+
+
+
+.loader3 {
+  position: absolute; /* Ubah dari relative ke absolute */
+  width: 10px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #8798ec;
+  box-shadow: 0 0 0 0 #0004;
+  animation: l1 1s infinite;
+  z-index: 2;
+  top: 18%; /* Tambahkan ini untuk posisi tengah vertikal */
+  left: 39%; /* Tambahkan ini untuk posisi tengah horizontal */
+  transform: translate(-50%, -50%); /* Pusatkan secara sempurna */
+}
+@keyframes l1 {
+    100% {box-shadow: 0 0 0 30px #0000}
+}
+
 
 
 
@@ -1155,6 +1336,20 @@ img.img-tabs {
     /* Adjust the margin for better alignment */
     .info-software p {
       margin-bottom: 5px;
+    }
+
+       .loader3 {
+      position: absolute;
+      width: 10px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: #8798ec;
+      box-shadow: 0 0 0 0 #0004;
+      animation: l1 1s infinite;
+      z-index: 2;
+      top: 18%; 
+      left: 33%;
+      transform: translate(-50%, -50%);
     }
     
   }
