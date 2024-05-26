@@ -56,11 +56,11 @@ document.querySelectorAll('.selengkapnya').forEach(function(selengkapnyaBtn) {
 
     // Determine the rotation direction and apply the corresponding animation class
     if (isHidden) {
-      icon.classList.remove('chevron-rotate-ccw');
-      icon.classList.add('chevron-rotate-cw');
-    } else {
       icon.classList.remove('chevron-rotate-cw');
       icon.classList.add('chevron-rotate-ccw');
+    } else {
+      icon.classList.remove('chevron-rotate-ccw');
+      icon.classList.add('chevron-rotate-cw');
     }
   });
 });
