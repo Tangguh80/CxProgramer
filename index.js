@@ -4,20 +4,116 @@ var cobaButtons = document.querySelectorAll('.coba');
 // Menambahkan event listener untuk setiap tombol "Coba"
 cobaButtons.forEach(function(button) {
   button.addEventListener('click', function() {
-    document.getElementById('overlay').style.display = 'flex';
+    var overlay = document.getElementById('overlay');
+    var overlayContent = overlay.querySelector('.overlay-content');
+    
+    overlay.style.display = 'flex';
+    overlay.classList.remove('fade-out');
+    overlay.classList.add('fade-in');
+    overlayContent.classList.remove('shrink-to-center');
+    overlayContent.classList.add('grow-from-center');
     document.body.style.overflow = 'hidden'; // Nonaktifkan scroll
   });
 });
 
 document.getElementById('belum').addEventListener('click', function() {
-  document.getElementById('overlay').style.display = 'none';
-  document.body.style.overflow = 'auto'; // Aktifkan kembali scroll
+  hideOverlay();
 });
 
+
+function hideOverlay() {
+  var overlay = document.getElementById('overlay');
+  var overlayContent = overlay.querySelector('.overlay-content');
+  
+  overlayContent.classList.remove('grow-from-center');
+  overlayContent.classList.add('shrink-to-center');
+  overlay.classList.remove('fade-in');
+  overlay.classList.add('fade-out');
+  
+  // Delay hiding the overlay to allow the shrink and fade animations to complete
+  setTimeout(function() {
+    overlay.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Aktifkan kembali scroll
+  }, 500); // The duration of the shrink and fade animations
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.getElementById('sudah').addEventListener('click', function() {
-  document.getElementById('overlay').style.display = 'none';
-  document.body.style.overflow = 'auto'; // Aktifkan kembali scroll
+  if (confirm('Apakah Anda mengizinkan untuk melihat aplikasi yang terinstal?')) {
+      document.querySelector('.info-content').style.display = 'none';
+      document.querySelector('.loading').style.display = 'flex';
+
+      setTimeout(function() {
+          document.querySelector('.loading').style.display = 'none';
+
+          let deviceType = 'Laptop'; // Default to Laptop
+          let cxStatus = 'Tidak Terpasang'; // Default to Not Installed
+
+          // Check device type
+          if (/Mobi|Android/i.test(navigator.userAgent)) {
+              deviceType = 'Mobile';
+          } else if (/Tablet|iPad/i.test(navigator.userAgent)) {
+              deviceType = 'Tablet';
+          }
+
+          // Check if CX-P.exe is installed
+          // Simulate checking the installation (replace with actual check logic)
+          if (isCxInstalled()) {
+              cxStatus = 'Terpasang';
+              document.getElementById('pergi').style.display = 'block'; // Show "Pergi" button
+          }
+
+          document.getElementById('device-type').innerText = deviceType;
+          document.getElementById('cx-status').innerText = cxStatus;
+          
+          document.querySelector('.info-device').style.display = 'flex';
+      }, 4000);
+  }
 });
+
+function isCxInstalled() {
+  // Placeholder for actual logic to check if CX-P.exe is installed
+  // In a real scenario, this would require some form of system check, possibly via a server-side script
+  return true; // Simulate that CX-P.exe is installed
+}
+
+document.getElementById('belum').addEventListener('click', function() {
+  hideOverlay();
+});
+
+document.getElementById('pergi').addEventListener('click', function() {
+  // Logic to open CX-P.exe
+  alert('Membuka aplikasi CX-P.exe');
+  // Here you would include the actual logic to open the application, which would typically require server-side code or a custom handler
+});
+
+function hideOverlay() {
+  var overlay = document.getElementById('overlay');
+  var overlayContent = overlay.querySelector('.overlay-content');
+  
+  overlayContent.classList.remove('grow-from-center');
+  overlayContent.classList.add('shrink-to-center');
+  overlay.classList.remove('fade-in');
+  overlay.classList.add('fade-out');
+  
+  setTimeout(function() {
+      overlay.style.display = 'none';
+      document.body.style.overflow = 'auto'; // Aktifkan kembali scroll
+  }, 500); // The duration of the shrink and fade animations
+}
 
 
 
