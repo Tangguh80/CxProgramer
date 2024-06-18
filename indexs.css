@@ -681,6 +681,11 @@ img.img-tabs {
 .tombol .selengkapnya {
   margin-left: auto; 
   margin-right: 0; 
+  background-color: #677483;
+}
+
+.tombol .selengkapnya:hover {
+  background-color: black;
 }
 
 .tombol button:hover {
